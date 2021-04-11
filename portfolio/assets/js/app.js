@@ -29,8 +29,7 @@ let footer = $(`
   <div class="container p-4">
     <div class="row">
       <div class="col-lg-20 col-md-12 mb-4 mb-md-0 justify-content-center">
-        <p class="tag" >"Develop a passion for learning. If you do, you will never cease to grow."<br><br><br>
-        <p class="tag">deze website is bij lange na nog niet af, bijvoorbeeld deze tekst vol met bugs :( maar dat komt we goed.<br>
+        <p class="tag" >"Develop a passion for learning. If you do, you will never cease to grow."<br>
         </p>  
       </div>
         <div class="col-lg-20 col-md-12 mb-4 mb-md-0">

@@ -24,7 +24,7 @@ let header = $(`
 </div>
 </nav>`);
 
-let footer = $(`
+<!--let footer = $(`
 <footer class="footer">
   <div class="container p-4">
     <div class="row">
@@ -37,7 +37,7 @@ let footer = $(`
     </div>
   </div>
 </footer>
-`);
+`);-->
 
 
 

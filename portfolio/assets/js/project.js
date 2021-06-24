@@ -53,6 +53,24 @@ const projects = [
         Previewlink: "miniproject (2VC).html",
         Githublink: "",
     },
+      {
+        title: "Goudse Lekkernij",
+        cardImage: "assets/images/project-page/dominos.jpg",
+        description: "Is een project waarbij we een gouds lekkernij moesten maken",
+        tags: ["React.js", "Python", "Tensorflow"],
+        tagimg: "https://cdn.iconscout.com/icon/free/png-512/react-1-282599.png",
+        Previewlink: "dominoproject.html",
+        Githublink: "",
+    },
+      {
+        title: "Levensloopbestendig wooning project",
+        cardImage: "assets/images/project-page/dominos.jpg",
+        description: "Is een Project waarbij we een levensloopbestendige wooning moesten maken",
+        tags: ["React.js", "Python", "Tensorflow"],
+        tagimg: "https://cdn.iconscout.com/icon/free/png-512/react-1-282599.png",
+        Previewlink: "dominoproject.html",
+        Githublink: "",
+    },
 ];
 
 // function for rendering project cards data

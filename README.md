@@ -24,8 +24,8 @@
 	 - [ ]  more ordend
 	 - [ ] The UI has to be updated
 ****
-- [ ] Project pages
-	- [ ] Make them more organised   
-	- [ ] More Content
+- [x] Project pages
+	- [x] Make them more organised   
+	- [x] More Content
 
 

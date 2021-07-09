@@ -2,7 +2,7 @@
 
 let header = $(`
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-<a class="navbar-brand" href="index.html"> ＜/𝙼𝚊𝚝𝚝 𝚝𝚎𝚛 𝚂𝚝𝚎𝚎𝚐𝚎＞ </a>
+<a class="navbar-brand" href="index.html"> ＜／𝙼𝚊𝚝𝚝 𝚝𝚎𝚛 𝚂𝚝𝚎𝚎𝚐𝚎＞ </a>
 <div class="hamburger_wrapper navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> 
 
   <div id="js-hamburger" class="hamburger">
@@ -21,6 +21,23 @@ let header = $(`
   </ul>
 </div>
 </nav>`);
+
+let footer = $(`
+<footer class="footer">
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-lg-20 col-md-12 mb-4 mb-md-0 justify-content-center">
+        <p class="tag" >"Develop a passion for learning. If you do, you will never cease to grow."<br><br><br>
+
+        </p>  
+      </div>
+        <div class="col-lg-20 col-md-12 mb-4 mb-md-0">
+      </div>
+    </div>
+  </div>
+</footer>
+`);
+
 
 
 // Window Loads

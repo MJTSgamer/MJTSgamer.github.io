@@ -6,13 +6,13 @@
  - [x] Portfolio V1 
 	 - [x] Finished
  ****
- - [ ] Portfolio V2 *
+ - [x] Portfolio V2 *
 ****
   *For portfolio V2 todo
 ****
  - [x] The redirecting page should be a bit more nice to look at.
 	 - [x] https://MJTSgamer.github.io redirects  https://MJTSgamer.github.io/portfolio. 
-	 - [ ] UI (or not it is not necessary)
+	 - [x] UI (or not it is not necessary)
 ****
  - [ ] Add my own projects to the "My Projects" tab.
 	 - [ ] discord bot

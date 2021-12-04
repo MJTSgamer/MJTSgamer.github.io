@@ -1,0 +1,70 @@
+#home, #particles-js {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+.section {
+  background-color: rgb(63, 25, 170);
+  justify-content: center;
+  align-items: center;
+}
+
+.text .header {
+  font-weight: bold;
+}
+
+.text {
+  font-size: 25px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.animated-text span {
+  display: none;
+  line-height: 1;
+}
+
+.animated-text span.active {
+  display: inline;
+}
+
+.animated-text:after {
+  content: "|";
+  display: initial;
+  width: 6px;
+  text-indent: 0;
+  background: var(--txt-fill);
+  animation: blink 0.3s infinite alternate;
+}
+
+.datawords {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  overflow-y: overlay;
+}
+
+.center {
+  align-content: center;
+}
+
+.no-scroll-preload {
+  overflow: hidden;
+}
+

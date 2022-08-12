@@ -1,0 +1,101 @@
+<html>
+<head>
+<title>main.js</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #cc7832;}
+.s2 { color: #6a8759;}
+.s3 { color: #808080;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.js</font>
+</center></td></tr></table>
+<pre><span class="s0">jQuery(document).ready(</span><span class="s1">function</span><span class="s0">(event){</span>
+  <span class="s1">var </span><span class="s0">isAnimating = </span><span class="s1">false,</span>
+    <span class="s0">newLocation = </span><span class="s2">''</span><span class="s1">;</span>
+    <span class="s0">firstLoad = </span><span class="s1">false;</span>
+  
+  <span class="s3">//trigger smooth transition from the actual page to the new one </span>
+  <span class="s0">$(</span><span class="s2">'main'</span><span class="s0">).on(</span><span class="s2">'click'</span><span class="s1">, </span><span class="s2">'[data-type=&quot;page-transition&quot;]'</span><span class="s1">, function</span><span class="s0">(event){</span>
+    <span class="s0">event.preventDefault()</span><span class="s1">;</span>
+    <span class="s3">//detect which page has been selected</span>
+    <span class="s1">var </span><span class="s0">newPage = $(</span><span class="s1">this</span><span class="s0">).attr(</span><span class="s2">'href'</span><span class="s0">)</span><span class="s1">;</span>
+    <span class="s3">//if the page is not already being animated - trigger animation</span>
+    <span class="s1">if</span><span class="s0">( !isAnimating ) changePage(newPage</span><span class="s1">, true</span><span class="s0">)</span><span class="s1">;</span>
+    <span class="s0">firstLoad = </span><span class="s1">true;</span>
+  <span class="s0">})</span><span class="s1">;</span>
+
+  <span class="s3">//detect the 'popstate' event - e.g. user clicking the back button</span>
+  <span class="s0">$(window).on(</span><span class="s2">'popstate'</span><span class="s1">, function</span><span class="s0">() {</span>
+  	<span class="s1">if</span><span class="s0">( firstLoad ) {</span>
+      <span class="s3">/* 
+      Safari emits a popstate event on page load - check if firstLoad is true before animating 
+      if it's false - the page has just been loaded  
+      */</span>
+      <span class="s1">var </span><span class="s0">newPageArray = location.pathname.split(</span><span class="s2">'/'</span><span class="s0">)</span><span class="s1">,</span>
+        <span class="s3">//this is the url of the page to be loaded </span>
+        <span class="s0">newPage = newPageArray[newPageArray.length - </span><span class="s4">1</span><span class="s0">]</span><span class="s1">;</span>
+
+      <span class="s1">if</span><span class="s0">( !isAnimating  &amp;&amp;  newLocation != newPage ) changePage(newPage</span><span class="s1">, false</span><span class="s0">)</span><span class="s1">;</span>
+    <span class="s0">}</span>
+    <span class="s0">firstLoad = </span><span class="s1">true;</span>
+	<span class="s0">})</span><span class="s1">;</span>
+
+	<span class="s1">function </span><span class="s0">changePage(url</span><span class="s1">, </span><span class="s0">bool) {</span>
+    <span class="s0">isAnimating = </span><span class="s1">true;</span>
+    <span class="s3">// trigger page animation</span>
+    <span class="s0">$(</span><span class="s2">'body'</span><span class="s0">).addClass(</span><span class="s2">'page-is-changing'</span><span class="s0">)</span><span class="s1">;</span>
+    <span class="s0">$(</span><span class="s2">'.cd-loading-bar'</span><span class="s0">).one(</span><span class="s2">'webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend'</span><span class="s1">, function</span><span class="s0">(){</span>
+    	<span class="s0">loadNewContent(url</span><span class="s1">, </span><span class="s0">bool)</span><span class="s1">;</span>
+      <span class="s0">newLocation = url</span><span class="s1">;</span>
+      <span class="s0">$(</span><span class="s2">'.cd-loading-bar'</span><span class="s0">).off(</span><span class="s2">'webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend'</span><span class="s0">)</span><span class="s1">;</span>
+    <span class="s0">})</span><span class="s1">;</span>
+    <span class="s3">//if browser doesn't support CSS transitions</span>
+    <span class="s1">if</span><span class="s0">( !transitionsSupported() ) {</span>
+      <span class="s0">loadNewContent(url</span><span class="s1">, </span><span class="s0">bool)</span><span class="s1">;</span>
+      <span class="s0">newLocation = url</span><span class="s1">;</span>
+    <span class="s0">}</span>
+	<span class="s0">}</span>
+
+	<span class="s1">function </span><span class="s0">loadNewContent(url</span><span class="s1">, </span><span class="s0">bool) {</span>
+		<span class="s0">url = (</span><span class="s2">'' </span><span class="s0">== url) ? </span><span class="s2">'index.html' </span><span class="s0">: url</span><span class="s1">;</span>
+  	<span class="s1">var </span><span class="s0">newSection = </span><span class="s2">'cd-'</span><span class="s0">+url.replace(</span><span class="s2">'.html'</span><span class="s1">, </span><span class="s2">''</span><span class="s0">)</span><span class="s1">;</span>
+  	<span class="s1">var </span><span class="s0">section = $(</span><span class="s2">'&lt;div class=&quot;cd-main-content '</span><span class="s0">+newSection+</span><span class="s2">'&quot;&gt;&lt;/div&gt;'</span><span class="s0">)</span><span class="s1">;</span>
+  		
+  	<span class="s0">section.load(url+</span><span class="s2">' .cd-main-content &gt; *'</span><span class="s1">, function</span><span class="s0">(event){</span>
+      <span class="s3">// load new content and replace &lt;main&gt; content with the new one</span>
+      <span class="s0">$(</span><span class="s2">'main'</span><span class="s0">).html(section)</span><span class="s1">;</span>
+      <span class="s3">//if browser doesn't support CSS transitions - dont wait for the end of transitions</span>
+      <span class="s1">var </span><span class="s0">delay = ( transitionsSupported() ) ? </span><span class="s4">1200 </span><span class="s0">: </span><span class="s4">0</span><span class="s1">;</span>
+      <span class="s0">setTimeout(</span><span class="s1">function</span><span class="s0">(){</span>
+        <span class="s3">//wait for the end of the transition on the loading bar before revealing the new content</span>
+        <span class="s0">( section.hasClass(</span><span class="s2">'cd-about'</span><span class="s0">) ) ? $(</span><span class="s2">'body'</span><span class="s0">).addClass(</span><span class="s2">'cd-about'</span><span class="s0">) : $(</span><span class="s2">'body'</span><span class="s0">).removeClass(</span><span class="s2">'cd-about'</span><span class="s0">)</span><span class="s1">;</span>
+        <span class="s0">$(</span><span class="s2">'body'</span><span class="s0">).removeClass(</span><span class="s2">'page-is-changing'</span><span class="s0">)</span><span class="s1">;</span>
+        <span class="s0">$(</span><span class="s2">'.cd-loading-bar'</span><span class="s0">).one(</span><span class="s2">'webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend'</span><span class="s1">, function</span><span class="s0">(){</span>
+          <span class="s0">isAnimating = </span><span class="s1">false;</span>
+          <span class="s0">$(</span><span class="s2">'.cd-loading-bar'</span><span class="s0">).off(</span><span class="s2">'webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend'</span><span class="s0">)</span><span class="s1">;</span>
+        <span class="s0">})</span><span class="s1">;</span>
+
+        <span class="s1">if</span><span class="s0">( !transitionsSupported() ) isAnimating = </span><span class="s1">false;</span>
+      <span class="s0">}</span><span class="s1">, </span><span class="s0">delay)</span><span class="s1">;</span>
+      
+      <span class="s1">if</span><span class="s0">(url!=window.location &amp;&amp; bool){</span>
+        <span class="s3">//add the new page to the window.history</span>
+        <span class="s3">//if the new page was triggered by a 'popstate' event, don't add it</span>
+        <span class="s0">window.history.pushState({path: url}</span><span class="s1">,</span><span class="s2">''</span><span class="s1">,</span><span class="s0">url)</span><span class="s1">;</span>
+      <span class="s0">}</span>
+		<span class="s0">})</span><span class="s1">;</span>
+  <span class="s0">}</span>
+
+  <span class="s1">function </span><span class="s0">transitionsSupported() {</span>
+    <span class="s1">return </span><span class="s0">$(</span><span class="s2">'html'</span><span class="s0">).hasClass(</span><span class="s2">'csstransitions'</span><span class="s0">)</span><span class="s1">;</span>
+  <span class="s0">}</span>
+<span class="s0">})</span><span class="s1">;</span></pre>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>_layout.scss</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bc9455; font-style: italic;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6d9cbe;}
+.s3 { color: #a9b7c6;}
+.s4 { color: #6897bb;}
+.s5 { color: #a5c261;}
+.s6 { color: #cc7832;}
+.s7 { color: #d0d0ff;}
+.s8 { color: #e8bf6a;}
+.s9 { color: #bababa;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+_layout.scss</font>
+</center></td></tr></table>
+<pre><span class="s0">// breakpoints</span>
+   
+<span class="s2">$S</span><span class="s3">:     </span><span class="s4">480</span><span class="s5">px</span><span class="s6">;   </span>
+<span class="s2">$M</span><span class="s3">:     </span><span class="s4">768</span><span class="s5">px</span><span class="s6">;     </span>
+<span class="s2">$L</span><span class="s3">:     </span><span class="s4">1170</span><span class="s5">px</span><span class="s6">;     </span>
+
+<span class="s0">// media queries</span>
+
+<span class="s7">@mixin </span><span class="s8">MQ</span><span class="s1">(</span><span class="s2">$canvas</span><span class="s1">) {</span>
+  <span class="s6">@if </span><span class="s2">$canvas </span><span class="s1">== </span><span class="s5">S </span><span class="s1">{</span>
+   <span class="s6">@media </span><span class="s8">only </span><span class="s5">screen </span><span class="s1">and (</span><span class="s9">min-width</span><span class="s3">: </span><span class="s2">$S</span><span class="s1">) { </span><span class="s6">@content; </span><span class="s1">} </span>
+  <span class="s1">}</span>
+  <span class="s6">@else if </span><span class="s2">$canvas </span><span class="s1">== </span><span class="s8">M </span><span class="s1">{</span>
+   <span class="s6">@media </span><span class="s8">only </span><span class="s5">screen </span><span class="s1">and (</span><span class="s9">min-width</span><span class="s3">: </span><span class="s2">$M</span><span class="s1">) { </span><span class="s6">@content; </span><span class="s1">} </span>
+  <span class="s1">}</span>
+  <span class="s6">@else if </span><span class="s2">$canvas </span><span class="s1">== </span><span class="s8">L </span><span class="s1">{</span>
+   <span class="s6">@media </span><span class="s8">only </span><span class="s5">screen </span><span class="s1">and (</span><span class="s9">min-width</span><span class="s3">: </span><span class="s2">$L</span><span class="s1">) { </span><span class="s6">@content; </span><span class="s1">} </span>
+  <span class="s1">}</span>
+<span class="s1">}</span>
+
+</pre>
+</body>
+</html>

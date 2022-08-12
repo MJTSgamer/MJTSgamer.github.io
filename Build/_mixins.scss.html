@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>_mixins.scss</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bc9455; font-style: italic;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #d0d0ff;}
+.s3 { color: #e8bf6a;}
+.s4 { color: #6d9cbe;}
+.s5 { color: #a9b7c6;}
+.s6 { color: #cc7832;}
+.s7 { color: #bababa;}
+.s8 { color: #6897bb;}
+.s9 { color: #a5c261;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+_mixins.scss</font>
+</center></td></tr></table>
+<pre><span class="s0">// center vertically and/or horizontally an absolute positioned element</span>
+
+<span class="s2">@mixin </span><span class="s3">center</span><span class="s1">(</span><span class="s4">$xy</span><span class="s5">:</span><span class="s3">xy</span><span class="s1">) {</span>
+  <span class="s6">@if </span><span class="s4">$xy </span><span class="s1">== </span><span class="s3">xy </span><span class="s1">{</span>
+    <span class="s7">left</span><span class="s5">: </span><span class="s8">50</span><span class="s1">%</span><span class="s6">;</span>
+    <span class="s7">top</span><span class="s5">: </span><span class="s8">50</span><span class="s1">%</span><span class="s6">;</span>
+    <span class="s7">bottom</span><span class="s5">: </span><span class="s9">auto</span><span class="s6">;</span>
+    <span class="s7">right</span><span class="s5">: </span><span class="s9">auto</span><span class="s6">;</span>
+    <span class="s6">@include </span><span class="s3">transform</span><span class="s1">(</span><span class="s3">translateX</span><span class="s1">(-</span><span class="s8">50</span><span class="s1">%) </span><span class="s3">translateY</span><span class="s1">(-</span><span class="s8">50</span><span class="s1">%))</span><span class="s6">;</span>
+  <span class="s1">}</span>
+  <span class="s6">@else if </span><span class="s4">$xy </span><span class="s1">== </span><span class="s9">x </span><span class="s1">{</span>
+    <span class="s7">left</span><span class="s5">: </span><span class="s8">50</span><span class="s1">%</span><span class="s6">;</span>
+    <span class="s7">right</span><span class="s5">: </span><span class="s9">auto</span><span class="s6">;</span>
+    <span class="s6">@include </span><span class="s3">transform</span><span class="s1">(</span><span class="s3">translateX</span><span class="s1">(-</span><span class="s8">50</span><span class="s1">%))</span><span class="s6">;</span>
+  <span class="s1">}</span>
+  <span class="s6">@else if </span><span class="s4">$xy </span><span class="s1">== </span><span class="s9">y </span><span class="s1">{</span>
+    <span class="s7">top</span><span class="s5">: </span><span class="s8">50</span><span class="s1">%</span><span class="s6">;</span>
+    <span class="s7">bottom</span><span class="s5">: </span><span class="s9">auto</span><span class="s6">;</span>
+    <span class="s6">@include </span><span class="s3">transform</span><span class="s1">(</span><span class="s3">translateY</span><span class="s1">(-</span><span class="s8">50</span><span class="s1">%))</span><span class="s6">;</span>
+  <span class="s1">}</span>
+<span class="s1">}</span>
+
+<span class="s0">// antialiasing mode font rendering</span>
+
+<span class="s2">@mixin </span><span class="s3">font-smoothing </span><span class="s1">{</span>
+  <span class="s7">-webkit-font-smoothing</span><span class="s5">: </span><span class="s9">antialiased</span><span class="s6">;</span>
+  <span class="s7">-moz-osx-font-smoothing</span><span class="s5">: </span><span class="s9">grayscale</span><span class="s6">;</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

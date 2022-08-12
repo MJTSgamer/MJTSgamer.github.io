@@ -1,0 +1,333 @@
+<html>
+<head>
+<title>style.scss</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #bc9455; font-style: italic;}
+.s4 { color: #e8bf6a;}
+.s5 { color: #a9b7c6;}
+.s6 { color: #bababa;}
+.s7 { color: #a5c261;}
+.s8 { color: #6897bb;}
+.s9 { color: #6d9cbe;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+style.scss</font>
+</center></td></tr></table>
+<pre><span class="s0">@import </span><span class="s2">'bourbon'</span><span class="s0">; </span><span class="s3">// http://bourbon.io/</span>
+
+<span class="s0">@import </span><span class="s2">'../partials/variables'</span><span class="s0">; </span><span class="s3">// colors, fonts etc...</span>
+
+<span class="s0">@import </span><span class="s2">'../partials/mixins'</span><span class="s0">; </span><span class="s3">// custom mixins</span>
+
+<span class="s0">@import </span><span class="s2">'../partials/layout'</span><span class="s0">; </span><span class="s3">// responsive grid and media queries</span>
+
+<span class="s3">/* --------------------------------  
+ 
+Primary style 
+ 
+-------------------------------- */</span>
+
+<span class="s4">*</span><span class="s0">, </span><span class="s4">*</span><span class="s5">::</span><span class="s4">after</span><span class="s0">, </span><span class="s4">*</span><span class="s5">::</span><span class="s4">before </span><span class="s1">{</span>
+	<span class="s6">box-sizing</span><span class="s5">: </span><span class="s7">border-box</span><span class="s0">;</span>
+<span class="s1">}</span>
+
+<span class="s4">html </span><span class="s1">{</span>
+	<span class="s6">font-size</span><span class="s5">: </span><span class="s8">62.5</span><span class="s1">%</span><span class="s0">;</span>
+<span class="s1">}</span>
+
+<span class="s4">body </span><span class="s1">{</span>
+	<span class="s6">font</span><span class="s5">: </span><span class="s1">{</span>
+		<span class="s6">size</span><span class="s5">: </span><span class="s8">1.6</span><span class="s7">rem</span><span class="s0">;</span>
+		<span class="s6">family</span><span class="s5">: </span><span class="s9">$primary-font</span><span class="s0">; </span><span class="s3">// variables inside partials &gt; _variables.scss</span>
+	<span class="s1">}</span>
+	<span class="s6">color</span><span class="s5">: </span><span class="s9">$color-1</span><span class="s0">;</span>
+	<span class="s6">background-color</span><span class="s5">: </span><span class="s9">$color-3</span><span class="s0">;</span>
+	<span class="s0">@include </span><span class="s4">font-smoothing</span><span class="s0">;</span>
+<span class="s1">}</span>
+
+<span class="s4">a </span><span class="s1">{</span>
+	<span class="s6">color</span><span class="s5">: </span><span class="s9">$color-2</span><span class="s0">;</span>
+	<span class="s6">text-decoration</span><span class="s5">: </span><span class="s7">none</span><span class="s0">;</span>
+<span class="s1">}</span>
+
+<span class="s4">h1 </span><span class="s1">{</span>
+	<span class="s6">color</span><span class="s5">: </span><span class="s9">$color-3</span><span class="s0">;</span>
+	<span class="s6">margin-bottom</span><span class="s5">: </span><span class="s8">1</span><span class="s7">em</span><span class="s0">;</span>
+	<span class="s6">font-size</span><span class="s5">: </span><span class="s8">2.2</span><span class="s7">rem</span><span class="s0">;</span>
+
+	<span class="s0">@include </span><span class="s4">MQ</span><span class="s1">(</span><span class="s4">M</span><span class="s1">) {</span>
+		<span class="s6">font-size</span><span class="s5">: </span><span class="s8">4.4</span><span class="s7">rem</span><span class="s0">;</span>
+		<span class="s6">font-weight</span><span class="s5">: </span><span class="s8">300</span><span class="s0">;</span>
+	<span class="s1">}</span>
+<span class="s1">}</span>
+
+<span class="s3">/* --------------------------------  
+ 
+Patterns - reusable parts of our design 
+ 
+-------------------------------- */</span>
+
+<span class="s1">.</span><span class="s4">cd-btn </span><span class="s1">{</span>
+	<span class="s6">display</span><span class="s5">: </span><span class="s7">inline-block</span><span class="s0">;</span>
+	<span class="s6">padding</span><span class="s5">: </span><span class="s8">1.4</span><span class="s7">em </span><span class="s8">1.6</span><span class="s7">em</span><span class="s0">;</span>
+	<span class="s6">margin-bottom</span><span class="s5">: </span><span class="s8">2</span><span class="s7">em</span><span class="s0">;</span>
+	<span class="s6">border-radius</span><span class="s5">: </span><span class="s8">50</span><span class="s7">em</span><span class="s0">;</span>
+	<span class="s6">background-color</span><span class="s5">: </span><span class="s9">$color-2</span><span class="s0">;</span>
+	<span class="s6">color</span><span class="s5">: </span><span class="s9">$color-3</span><span class="s0">;</span>
+	<span class="s6">font-weight</span><span class="s5">: </span><span class="s7">bold</span><span class="s0">;</span>
+	<span class="s6">font-size</span><span class="s5">: </span><span class="s8">1.3</span><span class="s7">rem</span><span class="s0">;</span>
+	<span class="s6">letter-spacing</span><span class="s5">: </span><span class="s8">1</span><span class="s7">px</span><span class="s0">;</span>
+	<span class="s6">text-transform</span><span class="s5">: </span><span class="s7">uppercase</span><span class="s0">;</span>
+	<span class="s6">box-shadow</span><span class="s5">: </span><span class="s8">0 1</span><span class="s7">px </span><span class="s8">4</span><span class="s7">px </span><span class="s4">rgba</span><span class="s1">(</span><span class="s8">#000</span><span class="s0">, </span><span class="s8">.1</span><span class="s1">)</span><span class="s0">;</span>
+
+	<span class="s1">.</span><span class="s4">no-touch &amp;</span><span class="s5">:</span><span class="s4">hover </span><span class="s1">{</span>
+		<span class="s6">background-color</span><span class="s5">: </span><span class="s4">lighten</span><span class="s1">(</span><span class="s9">$color-2</span><span class="s0">, </span><span class="s8">5</span><span class="s1">%)</span><span class="s0">;</span>
+	<span class="s1">}</span>
+
+	<span class="s1">.</span><span class="s4">cd-about &amp; </span><span class="s1">{</span>
+		<span class="s6">background-color</span><span class="s5">: </span><span class="s9">$color-1</span><span class="s0">;</span>
+	<span class="s1">}</span>
+<span class="s1">}</span>
+
+<span class="s3">/* --------------------------------  
+ 
+Main Components  
+ 
+-------------------------------- */</span>
+
+<span class="s4">body </span><span class="s1">{</span>
+
+	<span class="s4">&amp;</span><span class="s5">::</span><span class="s4">after</span><span class="s0">, </span><span class="s4">&amp;</span><span class="s5">::</span><span class="s4">before </span><span class="s1">{</span>
+		<span class="s3">/* these are the 2 half blocks which cover the content once the animation is triggered */</span>
+		<span class="s6">content</span><span class="s5">: </span><span class="s2">''</span><span class="s0">;</span>
+		<span class="s6">height</span><span class="s5">: </span><span class="s8">50</span><span class="s7">vh</span><span class="s0">;</span>
+		<span class="s6">width</span><span class="s5">: </span><span class="s8">100</span><span class="s1">%</span><span class="s0">;</span>
+		<span class="s6">position</span><span class="s5">: </span><span class="s7">fixed</span><span class="s0">;</span>
+		<span class="s6">left</span><span class="s5">: </span><span class="s8">0</span><span class="s0">;</span>
+		<span class="s6">background-color</span><span class="s5">: </span><span class="s9">$color-3</span><span class="s0">;</span>
+		<span class="s6">z-index</span><span class="s5">: </span><span class="s8">1</span><span class="s0">;</span>
+	
+		<span class="s3">/* Force Hardware Acceleration */</span>
+		<span class="s0">@include </span><span class="s4">backface-visibility</span><span class="s1">(</span><span class="s7">hidden</span><span class="s1">)</span><span class="s0">;</span>
+		<span class="s0">@include </span><span class="s4">transform</span><span class="s1">(</span><span class="s4">translateZ</span><span class="s1">(</span><span class="s8">0</span><span class="s1">))</span><span class="s0">;</span>
+
+		<span class="s0">@include </span><span class="s4">transition</span><span class="s1">(</span><span class="s4">transform </span><span class="s8">0.4</span><span class="s7">s </span><span class="s8">0.4</span><span class="s7">s</span><span class="s1">)</span><span class="s0">;</span>
+	<span class="s1">}</span>
+
+	<span class="s4">&amp;</span><span class="s5">::</span><span class="s4">before </span><span class="s1">{</span>
+		<span class="s6">top</span><span class="s5">: </span><span class="s8">0</span><span class="s0">;</span>
+		<span class="s0">@include </span><span class="s4">transform</span><span class="s1">(</span><span class="s4">translateY</span><span class="s1">(-</span><span class="s8">100</span><span class="s1">%))</span><span class="s0">;</span>
+	<span class="s1">}</span>
+
+	<span class="s4">&amp;</span><span class="s5">::</span><span class="s4">after </span><span class="s1">{</span>
+		<span class="s6">bottom</span><span class="s5">: </span><span class="s8">0</span><span class="s0">;</span>
+		<span class="s0">@include </span><span class="s4">transform</span><span class="s1">(</span><span class="s4">translateY</span><span class="s1">(</span><span class="s8">100</span><span class="s1">%))</span><span class="s0">;</span>
+	<span class="s1">}</span>
+
+	<span class="s4">&amp;</span><span class="s1">.</span><span class="s4">page-is-changing</span><span class="s5">::</span><span class="s4">after</span><span class="s0">, </span><span class="s4">&amp;</span><span class="s1">.</span><span class="s4">page-is-changing</span><span class="s5">::</span><span class="s4">before </span><span class="s1">{</span>
+		<span class="s0">@include </span><span class="s4">transform</span><span class="s1">(</span><span class="s4">translateY</span><span class="s1">(</span><span class="s8">0</span><span class="s1">))</span><span class="s0">;</span>
+		<span class="s0">@include </span><span class="s4">transition</span><span class="s1">(</span><span class="s4">transform </span><span class="s8">0.4</span><span class="s7">s </span><span class="s8">0</span><span class="s7">s</span><span class="s1">)</span><span class="s0">;</span>
+	<span class="s1">}</span>
+<span class="s1">}</span>
+
+<span class="s4">main </span><span class="s1">{</span>
+	<span class="s6">height</span><span class="s5">: </span><span class="s8">100</span><span class="s7">vh</span><span class="s0">;</span>
+	<span class="s6">padding</span><span class="s5">: </span><span class="s8">10</span><span class="s7">px</span><span class="s0">;</span>
+	<span class="s6">text-align</span><span class="s5">: </span><span class="s7">center</span><span class="s0">;</span>
+	
+	<span class="s1">.</span><span class="s4">cd-main-content </span><span class="s1">{</span>
+		<span class="s6">position</span><span class="s5">: </span><span class="s7">relative</span><span class="s0">;</span>
+		<span class="s6">height</span><span class="s5">: </span><span class="s4">calc</span><span class="s1">(</span><span class="s8">100</span><span class="s7">vh </span><span class="s1">- </span><span class="s8">20</span><span class="s7">px</span><span class="s1">)</span><span class="s0">;</span>
+
+		<span class="s1">&gt; </span><span class="s4">div </span><span class="s1">{</span>
+			<span class="s6">height</span><span class="s5">: </span><span class="s8">100</span><span class="s1">%</span><span class="s0">;</span>
+			<span class="s6">overflow</span><span class="s5">: </span><span class="s7">hidden</span><span class="s0">;</span>
+			<span class="s6">overflow-y</span><span class="s5">: </span><span class="s7">auto</span><span class="s0">;</span>
+			<span class="s6">-webkit-overflow-scrolling</span><span class="s5">: </span><span class="s7">touch</span><span class="s0">;</span>
+		<span class="s1">}</span>
+
+		<span class="s4">&amp;</span><span class="s5">::</span><span class="s4">after</span><span class="s0">, </span><span class="s4">&amp;</span><span class="s5">::</span><span class="s4">before </span><span class="s1">{</span>
+			<span class="s3">/* these are the 2 gradient overlay at the top and bottom of the .cd-main-content - to indicate that you can scroll */</span>
+			<span class="s6">content</span><span class="s5">: </span><span class="s2">''</span><span class="s0">;</span>
+			<span class="s6">position</span><span class="s5">: </span><span class="s7">absolute</span><span class="s0">;</span>
+			<span class="s6">left</span><span class="s5">: </span><span class="s8">0</span><span class="s0">;</span>
+			<span class="s6">height</span><span class="s5">: </span><span class="s8">50</span><span class="s7">px</span><span class="s0">;</span>
+			<span class="s6">width</span><span class="s5">: </span><span class="s8">100</span><span class="s1">%</span><span class="s0">;</span>
+		<span class="s1">}</span>
+
+		<span class="s4">&amp;</span><span class="s5">::</span><span class="s4">before </span><span class="s1">{</span>
+			<span class="s6">top</span><span class="s5">: </span><span class="s8">0</span><span class="s0">;</span>
+		<span class="s1">}</span>
+		
+		<span class="s4">&amp;</span><span class="s5">::</span><span class="s4">after </span><span class="s1">{</span>
+			<span class="s6">bottom</span><span class="s5">: </span><span class="s8">0</span><span class="s0">;</span>
+		<span class="s1">}</span>
+
+		<span class="s4">&amp;</span><span class="s1">.</span><span class="s4">cd-index </span><span class="s1">{</span>
+			<span class="s3">/* .cd-main-content basic style - index page */</span>
+			<span class="s6">background-color</span><span class="s5">: </span><span class="s9">$color-1</span><span class="s0">;</span>
+			<span class="s3">/* vertically center its content */ </span>
+			<span class="s6">display</span><span class="s5">: </span><span class="s7">table</span><span class="s0">;</span>
+			<span class="s6">width</span><span class="s5">: </span><span class="s8">100</span><span class="s1">%</span><span class="s0">;</span>
+
+			<span class="s1">&gt; </span><span class="s4">div </span><span class="s1">{</span>
+				<span class="s3">/* vertically center the content inside the .cd-index */ </span>
+				<span class="s6">display</span><span class="s5">: </span><span class="s7">table-cell</span><span class="s0">;</span>
+				<span class="s6">vertical-align</span><span class="s5">: </span><span class="s7">middle</span><span class="s0">;</span>
+			<span class="s1">}</span>
+			
+			<span class="s4">&amp;</span><span class="s5">::</span><span class="s4">after </span><span class="s1">{</span>
+				<span class="s0">@include </span><span class="s4">linear-gradient</span><span class="s1">(to </span><span class="s7">top</span><span class="s0">, </span><span class="s4">rgba</span><span class="s1">(</span><span class="s9">$color-1</span><span class="s0">, </span><span class="s8">1</span><span class="s1">)</span><span class="s0">, </span><span class="s4">rgba</span><span class="s1">(</span><span class="s9">$color-1</span><span class="s0">, </span><span class="s8">0</span><span class="s1">)</span><span class="s0">, </span><span class="s9">$fallback</span><span class="s5">: </span><span class="s4">rgba</span><span class="s1">(</span><span class="s9">$color-1</span><span class="s0">, </span><span class="s8">0</span><span class="s1">))</span><span class="s0">;</span>
+			<span class="s1">}</span>
+
+			<span class="s4">&amp;</span><span class="s5">::</span><span class="s4">before </span><span class="s1">{</span>
+				<span class="s0">@include </span><span class="s4">linear-gradient</span><span class="s1">(to </span><span class="s7">bottom</span><span class="s0">, </span><span class="s4">rgba</span><span class="s1">(</span><span class="s9">$color-1</span><span class="s0">, </span><span class="s8">1</span><span class="s1">)</span><span class="s0">, </span><span class="s4">rgba</span><span class="s1">(</span><span class="s9">$color-1</span><span class="s0">, </span><span class="s8">0</span><span class="s1">)</span><span class="s0">, </span><span class="s9">$fallback</span><span class="s5">: </span><span class="s4">rgba</span><span class="s1">(</span><span class="s9">$color-1</span><span class="s0">, </span><span class="s8">0</span><span class="s1">))</span><span class="s0">;</span>
+			<span class="s1">}</span>
+		<span class="s1">}</span>
+
+		<span class="s4">&amp;</span><span class="s1">.</span><span class="s4">cd-about </span><span class="s1">{</span>
+			<span class="s3">/* .cd-main-content basic style - about page */</span>
+			<span class="s6">background-color</span><span class="s5">: </span><span class="s9">$color-2</span><span class="s0">;</span>
+			
+			<span class="s1">&gt; </span><span class="s4">div </span><span class="s1">{</span>
+				<span class="s6">padding-top</span><span class="s5">: </span><span class="s8">50</span><span class="s7">px</span><span class="s0">;</span>
+			<span class="s1">}</span>
+
+			<span class="s4">&amp;</span><span class="s5">::</span><span class="s4">after </span><span class="s1">{</span>
+				<span class="s0">@include </span><span class="s4">linear-gradient</span><span class="s1">(to </span><span class="s7">top</span><span class="s0">, </span><span class="s4">rgba</span><span class="s1">(</span><span class="s9">$color-2</span><span class="s0">, </span><span class="s8">1</span><span class="s1">)</span><span class="s0">, </span><span class="s4">rgba</span><span class="s1">(</span><span class="s9">$color-2</span><span class="s0">, </span><span class="s8">0</span><span class="s1">)</span><span class="s0">, </span><span class="s9">$fallback</span><span class="s5">: </span><span class="s4">rgba</span><span class="s1">(</span><span class="s9">$color-2</span><span class="s0">, </span><span class="s8">0</span><span class="s1">))</span><span class="s0">;</span>
+			<span class="s1">}</span>
+
+			<span class="s4">&amp;</span><span class="s5">::</span><span class="s4">before </span><span class="s1">{</span>
+				<span class="s0">@include </span><span class="s4">linear-gradient</span><span class="s1">(to </span><span class="s7">bottom</span><span class="s0">, </span><span class="s4">rgba</span><span class="s1">(</span><span class="s9">$color-2</span><span class="s0">, </span><span class="s8">1</span><span class="s1">)</span><span class="s0">, </span><span class="s4">rgba</span><span class="s1">(</span><span class="s9">$color-2</span><span class="s0">, </span><span class="s8">0</span><span class="s1">)</span><span class="s0">, </span><span class="s9">$fallback</span><span class="s5">: </span><span class="s4">rgba</span><span class="s1">(</span><span class="s9">$color-2</span><span class="s0">, </span><span class="s8">0</span><span class="s1">))</span><span class="s0">;</span>
+			<span class="s1">}</span>
+		<span class="s1">}</span>
+	<span class="s1">} </span>
+
+	<span class="s4">p </span><span class="s1">{</span>
+		<span class="s6">width</span><span class="s5">: </span><span class="s8">90</span><span class="s1">%</span><span class="s0">;</span>
+		<span class="s6">max-width</span><span class="s5">: </span><span class="s9">$M</span><span class="s0">;</span>
+		<span class="s6">margin</span><span class="s5">: </span><span class="s8">3</span><span class="s7">em auto</span><span class="s0">;</span>
+		<span class="s6">font-size</span><span class="s5">: </span><span class="s8">1.4</span><span class="s7">rem</span><span class="s0">;</span>
+		<span class="s6">line-height</span><span class="s5">: </span><span class="s8">1.6</span><span class="s0">;</span>
+		<span class="s6">color</span><span class="s5">: </span><span class="s4">tint</span><span class="s1">(</span><span class="s9">$color-2</span><span class="s0">, </span><span class="s8">20</span><span class="s1">%)</span><span class="s0">;</span>
+		<span class="s6">text-align</span><span class="s5">: </span><span class="s7">left</span><span class="s0">;</span>
+	<span class="s1">}</span>
+
+	<span class="s0">@include </span><span class="s4">MQ</span><span class="s1">(</span><span class="s4">M</span><span class="s1">) {</span>
+		<span class="s6">padding</span><span class="s5">: </span><span class="s8">20</span><span class="s7">px</span><span class="s0">;</span>
+
+		<span class="s1">.</span><span class="s4">cd-main-content </span><span class="s1">{</span>
+			<span class="s6">height</span><span class="s5">: </span><span class="s4">calc</span><span class="s1">(</span><span class="s8">100</span><span class="s7">vh </span><span class="s1">- </span><span class="s8">40</span><span class="s7">px</span><span class="s1">)</span><span class="s0">;</span>
+		<span class="s1">}</span>
+
+		<span class="s4">&amp;</span><span class="s1">.</span><span class="s4">cd-index </span><span class="s1">&gt; </span><span class="s4">div </span><span class="s1">{</span>
+			<span class="s6">padding-top</span><span class="s5">: </span><span class="s8">200</span><span class="s7">px</span><span class="s0">;</span>
+		<span class="s1">}</span>
+
+		<span class="s4">&amp;</span><span class="s1">.</span><span class="s4">cd-index </span><span class="s1">&gt; </span><span class="s4">div </span><span class="s1">{</span>
+			<span class="s6">padding-top</span><span class="s5">: </span><span class="s8">50</span><span class="s7">px</span><span class="s0">;</span>
+		<span class="s1">}</span>
+
+		<span class="s4">p </span><span class="s1">{</span>
+			<span class="s6">font-size</span><span class="s5">: </span><span class="s8">1.8</span><span class="s7">rem</span><span class="s0">;</span>
+			<span class="s6">line-height</span><span class="s5">: </span><span class="s8">2</span><span class="s0">;</span>
+		<span class="s1">}</span>
+	<span class="s1">}</span>
+<span class="s1">}</span>
+
+<span class="s1">.</span><span class="s4">cd-cover-layer </span><span class="s1">{</span>
+	<span class="s3">/* layer that covers the content when the animation is triggered */</span>
+	<span class="s6">position</span><span class="s5">: </span><span class="s7">fixed</span><span class="s0">;</span>
+	<span class="s0">@include </span><span class="s4">center</span><span class="s0">;</span>
+	<span class="s6">height</span><span class="s5">: </span><span class="s4">calc</span><span class="s1">(</span><span class="s8">100</span><span class="s1">% - </span><span class="s8">20</span><span class="s7">px</span><span class="s1">)</span><span class="s0">;</span>
+	<span class="s6">width</span><span class="s5">: </span><span class="s4">calc</span><span class="s1">(</span><span class="s8">100</span><span class="s1">% - </span><span class="s8">20</span><span class="s7">px</span><span class="s1">)</span><span class="s0">;</span>
+	<span class="s6">opacity</span><span class="s5">: </span><span class="s8">0</span><span class="s0">;</span>
+	<span class="s6">visibility</span><span class="s5">: </span><span class="s7">hidden</span><span class="s0">;</span>
+	<span class="s6">background-color</span><span class="s5">: </span><span class="s9">$color-1</span><span class="s0">;</span>
+	<span class="s0">@include </span><span class="s4">transition</span><span class="s1">(</span><span class="s7">opacity </span><span class="s8">0.4</span><span class="s7">s </span><span class="s8">0.4</span><span class="s7">s</span><span class="s0">, </span><span class="s7">visibility </span><span class="s8">0</span><span class="s7">s </span><span class="s8">0.8</span><span class="s7">s</span><span class="s1">)</span><span class="s0">;</span>
+
+	<span class="s1">.</span><span class="s4">cd-about &amp; </span><span class="s1">{</span>
+		<span class="s6">background-color</span><span class="s5">: </span><span class="s9">$color-2</span><span class="s0">;</span>
+	<span class="s1">}</span>
+
+	<span class="s1">.</span><span class="s4">page-is-changing &amp; </span><span class="s1">{</span>
+		<span class="s6">opacity</span><span class="s5">: </span><span class="s8">1</span><span class="s0">;</span>
+		<span class="s6">visibility</span><span class="s5">: </span><span class="s7">visible</span><span class="s0">;</span>
+		<span class="s0">@include </span><span class="s4">transition</span><span class="s1">(</span><span class="s7">opacity </span><span class="s8">0.3</span><span class="s7">s </span><span class="s8">0</span><span class="s7">s</span><span class="s0">, </span><span class="s7">visibility </span><span class="s8">0</span><span class="s7">s </span><span class="s8">0</span><span class="s7">s</span><span class="s1">)</span><span class="s0">;</span>
+	<span class="s1">}</span>
+
+	<span class="s0">@include </span><span class="s4">MQ</span><span class="s1">(</span><span class="s4">M</span><span class="s1">) {</span>
+		<span class="s6">height</span><span class="s5">: </span><span class="s4">calc</span><span class="s1">(</span><span class="s8">100</span><span class="s1">% - </span><span class="s8">40</span><span class="s7">px</span><span class="s1">)</span><span class="s0">;</span>
+		<span class="s6">width</span><span class="s5">: </span><span class="s4">calc</span><span class="s1">(</span><span class="s8">100</span><span class="s1">% - </span><span class="s8">40</span><span class="s7">px</span><span class="s1">)</span><span class="s0">;</span>
+	<span class="s1">}</span>
+<span class="s1">}</span>
+
+<span class="s1">.</span><span class="s4">cd-loading-bar </span><span class="s1">{</span>
+	<span class="s3">/* this is the loding bar - visible while switching from one page to the following one */</span>
+	<span class="s6">position</span><span class="s5">: </span><span class="s7">fixed</span><span class="s0">;</span>
+	<span class="s6">z-index</span><span class="s5">: </span><span class="s8">2</span><span class="s0">;</span>
+	<span class="s6">left</span><span class="s5">: </span><span class="s8">50</span><span class="s1">%</span><span class="s0">;</span>
+    <span class="s6">top</span><span class="s5">: </span><span class="s8">50</span><span class="s1">%</span><span class="s0">;</span>
+	<span class="s6">height</span><span class="s5">: </span><span class="s8">2</span><span class="s7">px</span><span class="s0">;</span>
+	<span class="s6">width</span><span class="s5">: </span><span class="s8">90</span><span class="s1">%</span><span class="s0">;</span>
+	<span class="s6">background-color</span><span class="s5">: </span><span class="s9">$color-1</span><span class="s0">;</span>
+	<span class="s6">visibility</span><span class="s5">: </span><span class="s7">hidden</span><span class="s0">;</span>
+	<span class="s0">@include </span><span class="s4">transition</span><span class="s1">(</span><span class="s7">visibility </span><span class="s8">0</span><span class="s7">s </span><span class="s8">0.4</span><span class="s7">s</span><span class="s0">, </span><span class="s4">transform </span><span class="s8">0.4</span><span class="s7">s </span><span class="s8">0</span><span class="s7">s ease-in</span><span class="s1">)</span><span class="s0">;</span>
+
+	<span class="s3">/* Force Hardware Acceleration */</span>
+	<span class="s0">@include </span><span class="s4">backface-visibility</span><span class="s1">(</span><span class="s7">hidden</span><span class="s1">)</span><span class="s0">;</span>
+	<span class="s0">@include </span><span class="s4">transform</span><span class="s1">(</span><span class="s4">translateZ</span><span class="s1">(</span><span class="s8">0</span><span class="s1">))</span><span class="s0">;</span>
+
+	<span class="s0">@include </span><span class="s4">transform</span><span class="s1">(</span><span class="s4">translateX</span><span class="s1">(-</span><span class="s8">50</span><span class="s1">%) </span><span class="s4">translateY</span><span class="s1">(-</span><span class="s8">50</span><span class="s1">%))</span><span class="s0">;</span>
+
+	<span class="s1">.</span><span class="s4">cd-about &amp; </span><span class="s1">{</span>
+		<span class="s6">background-color</span><span class="s5">: </span><span class="s9">$color-2</span><span class="s0">;</span>
+
+		<span class="s4">&amp;</span><span class="s5">::</span><span class="s4">before </span><span class="s1">{</span>
+			<span class="s6">background-color</span><span class="s5">: </span><span class="s9">$color-1</span><span class="s0">;</span>
+		<span class="s1">}</span>
+	<span class="s1">}</span>
+
+	<span class="s4">&amp;</span><span class="s5">::</span><span class="s4">before </span><span class="s1">{</span>
+		<span class="s3">/* this is the progress bar inside the loading bar */</span>
+		<span class="s6">content</span><span class="s5">: </span><span class="s2">''</span><span class="s0">;</span>
+		<span class="s6">position</span><span class="s5">: </span><span class="s7">absolute</span><span class="s0">;</span>
+		<span class="s6">left</span><span class="s5">: </span><span class="s8">0</span><span class="s0">;</span>
+		<span class="s6">top</span><span class="s5">: </span><span class="s8">0</span><span class="s0">;</span>
+		<span class="s6">height</span><span class="s5">: </span><span class="s8">100</span><span class="s1">%</span><span class="s0">;</span>
+		<span class="s6">width</span><span class="s5">: </span><span class="s8">100</span><span class="s1">%</span><span class="s0">;</span>
+		<span class="s6">background-color</span><span class="s5">: </span><span class="s9">$color-2</span><span class="s0">;</span>
+
+		<span class="s3">/* Force Hardware Acceleration */</span>
+		<span class="s0">@include </span><span class="s4">backface-visibility</span><span class="s1">(</span><span class="s7">hidden</span><span class="s1">)</span><span class="s0">;</span>
+		<span class="s0">@include </span><span class="s4">transform</span><span class="s1">(</span><span class="s4">translateZ</span><span class="s1">(</span><span class="s8">0</span><span class="s1">))</span><span class="s0">;</span>
+
+		<span class="s0">@include </span><span class="s4">transform</span><span class="s1">(</span><span class="s4">scaleX</span><span class="s1">(</span><span class="s8">0</span><span class="s1">))</span><span class="s0">;</span>
+		<span class="s0">@include </span><span class="s4">transform-origin</span><span class="s1">(</span><span class="s7">left center</span><span class="s1">)</span><span class="s0">;</span>
+	<span class="s1">}</span>
+
+	<span class="s1">.</span><span class="s4">page-is-changing &amp; </span><span class="s1">{</span>
+		<span class="s6">visibility</span><span class="s5">: </span><span class="s7">visible</span><span class="s0">;</span>
+		<span class="s0">@include </span><span class="s4">transform</span><span class="s1">(</span><span class="s4">translateX</span><span class="s1">(-</span><span class="s8">50</span><span class="s1">%) </span><span class="s4">translateY</span><span class="s1">(-</span><span class="s8">50</span><span class="s1">%) </span><span class="s4">scaleX</span><span class="s1">(</span><span class="s8">.3</span><span class="s1">))</span><span class="s0">;</span>
+		<span class="s0">@include </span><span class="s4">transition</span><span class="s1">(</span><span class="s7">visibility </span><span class="s8">0</span><span class="s7">s </span><span class="s8">0.3</span><span class="s7">s</span><span class="s0">, </span><span class="s4">transform </span><span class="s8">0.4</span><span class="s7">s </span><span class="s8">0.4</span><span class="s7">s</span><span class="s1">)</span><span class="s0">;</span>
+
+		<span class="s4">&amp;</span><span class="s5">::</span><span class="s4">before </span><span class="s1">{</span>
+			<span class="s0">@include </span><span class="s4">transform</span><span class="s1">(</span><span class="s4">scaleX</span><span class="s1">(</span><span class="s8">1</span><span class="s1">))</span><span class="s0">;</span>
+			<span class="s0">@include </span><span class="s4">transition</span><span class="s1">(</span><span class="s4">transform </span><span class="s8">0.8</span><span class="s7">s </span><span class="s8">0.8</span><span class="s7">s ease-in</span><span class="s1">)</span><span class="s0">;</span>
+		<span class="s1">}</span>
+	<span class="s1">}</span>
+
+	<span class="s0">@include </span><span class="s4">MQ</span><span class="s1">(</span><span class="s4">M</span><span class="s1">) {</span>
+		<span class="s6">width</span><span class="s5">: </span><span class="s4">calc</span><span class="s1">(</span><span class="s8">100</span><span class="s1">% - </span><span class="s8">40</span><span class="s7">px</span><span class="s1">)</span><span class="s0">;</span>
+	<span class="s1">}</span>
+<span class="s1">}</span></pre>
+</body>
+</html>

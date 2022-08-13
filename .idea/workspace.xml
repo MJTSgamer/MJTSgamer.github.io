@@ -2,8 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28370358-3ab5-41a2-8894-d3dbf8ef2d3a" name="Changes" comment="Lets go new update">
+      <change afterPath="$PROJECT_DIR$/css/PageFade.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build/_layout.scss.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build/_mixins.scss.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build/_variables.scss.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build/about.html.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build/index.html.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build/jquery-2.1.1.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build/main.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build/modernizr.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build/reset.css.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build/style.css.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build/style.scss.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build/watcherTasks.xml.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build/workspace.xml.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/reset.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.scss" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/AnimatedText.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Particles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery-2.1.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modernizr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/partials/_layout.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/partials/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/partials/_variables.scss" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +107,10 @@
       <option name="presentableId" value="Default" />
       <updated>1660297433332</updated>
       <workItem from="1660297434555" duration="4648000" />
-      <workItem from="1660314612968" duration="3123000" />
+      <workItem from="1660314612968" duration="3666000" />
+      <workItem from="1660324310992" duration="2080000" />
+      <workItem from="1660403806918" duration="955000" />
+      <workItem from="1660410355501" duration="1706000" />
     </task>
     <task id="LOCAL-00001" summary="Lets go new update">
       <created>1660317216148</created>
@@ -95,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660317441162</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Lets go new update">
+      <created>1660317932593</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1660317932593</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

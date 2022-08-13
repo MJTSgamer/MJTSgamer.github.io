@@ -1,61 +1,14 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <link href="css/PageFade.css" rel="stylesheet">
+    <script src="js/PageFade.js" type="text/javascript"></script>
 
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-
-    <link href="css/reset.css" rel="stylesheet"> <!-- CSS reset -->
-    <link href="css/style.css" rel="stylesheet"> <!-- Resource style -->
-    <link href="css/index.css" rel="stylesheet"> <!-- Resource style -->
-    <script src="js/modernizr.js"></script> <!-- Modernizr -->
-
-    <title>Animated Page Transition | CodyHouse</title>
 </head>
-<body onload="BuildingError();">
-<main>
-    <div class="cd-index cd-main-content">
-        <div>
-            <h1>Hoi 👋, Ik ben Matt ter Steege</h1>
-            <div class="text-center text col-sm-6"
-                 style="-webkit-user-select: none;-moz-user-select: none;user-select: none;">
-                <div class="rounded-circle">
-                    <img alt="" class="rounded-circle" height="200"
-                         src="https://raw.githubusercontent.com/MJTSgamer/MJTSgamer.github.io/050451605d950eadc555e0e276d89614a6f649b1/assets/img/avatars/dp_male.svg"
-                         style="box-shadow: 5px 5px 20px 1px rgb(160,160,160);user-select: none;"
-                         width="200">
-                </div>
-                <br>
-                <br>
-                <span class="animated-text" style="display: inline; color: white; font-size: 25px">ik houd van
-                    <span
-                            class="txt-rotate"
-                            data-period="2000"
-                            data-rotate='[ " Game Development.", " UI/UX.", " Programmeren.", " Web development.", " Nieuwe Skills Leren." ]'></span>
-                </span>
-                <br>
-                <br>
-            </div>
+<svg class="fade-out" id="fader"></svg>
+<script>fadeInPage()</script>
 
-            <a class="cd-btn" data-type="page-transition" href="index.html">Home();</a>
-            <a class="cd-btn" data-type="page-transition" href="projects.html">O&O Projecten();</a>
-            <a class="cd-btn" data-type="page-transition" href="ownProjects.html">Eigen Projecten();</a>
-        </div>
-    </div>
-</main>
-
-<div class="cd-cover-layer"></div>
-<div class="cd-loading-bar"></div>
-<script src="js/jquery-2.1.1.js"></script>
-<script src="js/main.js"></script> <!-- Resource jQuery -->
-<script src="js/AnimatedText.js"></script>
-
-<script defer>
-    function BuildingError() {
-        alert("Ik ben nog niet klaar met het bouwen van deze pagina.\n\nMocht de pagina nog niet klaar zijn dan moet je nog even wachten ;)");
-    }
-</script>
-
+<a href="about.html" id="link">Click me!</a>
 </body>
 </html>
